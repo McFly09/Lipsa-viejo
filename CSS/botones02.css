@@ -1,0 +1,153 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background: #e9ecf4e1;
+	color: #000;
+	font-family: 'Roboto', sans-serif;
+}
+
+.contenedor {
+	width: 90%;
+	max-width: 1000px;
+	margin: 10px auto;
+	display: grid;
+	grid-gap: 20px;
+	grid-template-columns: 3fr 9fr;
+	grid-template-rows: repeat(3, auto);
+
+	grid-template-areas: "header sidebar"
+						"contenido contenido"
+						 "footer footer";
+}
+
+.contenedor > div,
+.contenedor .header,
+.contenedor .contenido,
+.contenedor .sidebar,
+.contenedor .footer {
+	background: #fff;
+	padding: 20px;
+}
+
+.contenedor .header {
+	background: #e9ecf4e1; 
+	color: #fff;
+	grid-area: header;
+}
+
+.contenedor .contenido {
+	grid-area: contenido;
+	box-shadow: 0 0 20px #888888;
+}
+
+.contenedor .sidebar {
+	grid-column: 1 / 2;
+ 	background: #e9ecf4e1; 
+	text-align: center;
+	display: flex;
+	/* align-items: center; */
+	justify-content: center; 
+	min-height: 100px;
+	grid-area: sidebar;
+	
+}
+
+
+.contenedor .footer {
+	background: #7b1936;
+	color: #fff;
+	grid-area: footer;
+	text-align: center;
+} 
+.contenedor .footer >a{
+	font-size:24px;
+	width:40px;
+	height:40px;
+	line-height:40px;
+	display:inline-block;
+	text-align:center;
+	border-radius:50%;
+	border:1px solid #ccc;
+	margin:0 8px;
+	color:inherit;
+	opacity:0.75;
+} 
+.contenedor .footer > a:hover {
+	opacity:0.9;
+  }
+/*  */
+
+  
+  .contenedor .footer >p {
+	margin-top:15px;
+	text-align:center;
+	font-size:13px;
+	color:#aaa;
+	margin-bottom:0;
+  }
+/*  */
+.titulo{
+	 margin-bottom: 20px;
+}
+.contenido img{
+    width: 333px;
+    float: left;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+.nav1{
+    display: inline-block;
+    background-color: #928780;
+    color: white;
+    border-radius: 0px;
+    margin: 10px;
+    padding: 10px 30px;
+    font-size: 1em;
+    text-decoration: none;
+    left: 0;
+    text-align: center;
+    line-height: auto; 
+	height: 20px;
+    
+
+}
+.nav1:hover{
+    background-color: #7b1936;
+}
+nav {
+
+    padding: 10px;
+    display: flex;
+    justify-content: top;
+}  
+
+@media screen and (max-width: 900px){
+	.contenedor {
+		grid-template-areas: "header header"
+							"sidebar contenido"
+							"footer footer";
+	}
+	nav {
+        flex-direction: column;
+		
+
+    }
+	
+}
+
+@media screen and (max-width: 600px){
+	.contenedor {
+		grid-template-areas: "header sidebar"
+							 "contenido contenido"				
+						    "footer footer";
+	}
+	nav {
+        flex-direction: column;
+	
+		
+    }
+} 
